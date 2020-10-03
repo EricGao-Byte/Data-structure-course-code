@@ -117,6 +117,22 @@ int ListGet(SLNode* head, int n, DataType* x)
 	return 1;
 }
 
+//Ñ°ÕÒÔªËØ
+DataType ListFind(SLNode* head, DataType x)
+{
+	int i;
+	SLNode* p = head;
+	for (i = 0; i < ListLength(p); i++)
+	{
+		if (p->data == x)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+
 //Ïú»ÙÁ´±í
 void ListDestroy(SLNode** head)
 {

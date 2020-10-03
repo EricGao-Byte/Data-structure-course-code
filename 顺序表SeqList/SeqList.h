@@ -1,7 +1,6 @@
 #pragma once
 #include <stdio.h>
-typedef int DataType;
-const int MaxSize = 100;
+
 typedef struct
 {
 	DataType list[MaxSize];
@@ -17,9 +16,9 @@ void ListInit(SeqList* L)
 }
 
 //返回列表长度
-int ListLength(SeqList L)
+int ListLength(SeqList* L)
 {
-	return L.size;
+	return L->size;
 }
 
 //插入数据元素
@@ -80,6 +79,7 @@ int ListDelete(SeqList* L,int n,DataType* x)
 	}
 }
 
+
 //取元素
 int ListGet(SeqList L, int n, DataType* x)
 //取第n个结点的数据域,并存于x中带出
@@ -97,14 +97,43 @@ int ListGet(SeqList L, int n, DataType* x)
 	}
 }
 
-//打印元素
-void ListPrint(SeqList L)
+////寻找元素,并输出寻找数据为x的元素的编号(从0开始),找不到则返回-1
+//int ListFind(SeqList L,int x)
+//{
+//	int i;
+//	for ( i = 0; i < ListLength(L); i++)
+//	{
+//		if (L.list[i]==x)
+//		{
+//			return i;
+//		}
+//	}
+//	return -1;
+//}
+
+
+////打印元素
+//void ListPrint(SeqList L)
+//{
+//	int i;
+//	DataType elem;
+//	for ( i = 0; i < L.size; i++)
+//	{
+//		ListGet(L, i, &elem);
+//		printf("第%d个元素为: %d\n", i + 1, elem);
+//	}
+//}
+
+//逆置顺序表
+void ListReverse(SeqList* L)
 {
+	DataType t;
 	int i;
-	DataType elem;
-	for ( i = 0; i < L.size; i++)
+	int length = ListLength(L);
+	for ( i = 0; i < length/2; i++)
 	{
-		ListGet(L, i, &elem);
-		printf("第%d个元素为: %d\n", i + 1, elem);
+		t = L->list[i];
+		L->list[i] = L->list[length - 1 - i];
+		L->list[length - 1 - i] = t;
 	}
 }
