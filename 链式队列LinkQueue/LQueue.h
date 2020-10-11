@@ -107,7 +107,7 @@ void Destroy(LQueue* Q)
 	{
 		p1 = p;
 		p = p->next;
-		free(p);
+		free(p1);
 	}
 	Q->front = NULL;
 	Q->rear = NULL;

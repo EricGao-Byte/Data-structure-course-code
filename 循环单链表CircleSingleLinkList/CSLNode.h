@@ -44,14 +44,14 @@ int ListInsert(CSLNode* head, int n, DataType x)
 	CSLNode* p, * q;
 	int i;
 	p = head;
-	i = -1;
-	while (p->next != head && i < n - 1)
+	i = 1;
+	while (p != head && i < n - 1)
 		//最终指向第i-1个结点
 	{
 		p = p->next;
 		i++;
 	}
-	if (i != n - 1)
+	if (i != n - 1 && i != 1)
 	{
 		printf("插入元素的位置参数有误!\n");
 		return 1;
