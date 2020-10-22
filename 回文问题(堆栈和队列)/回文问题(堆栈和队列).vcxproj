@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{52576a39-18e7-4590-b3e4-1f4c8b12f2c7}</ProjectGuid>
-    <RootNamespace>二叉树</RootNamespace>
+    <ProjectGuid>{c2de461c-4877-4581-bfa4-0cf6281b57d8}</ProjectGuid>
+    <RootNamespace>回文问题堆栈和队列</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,7 +142,10 @@
     <ClCompile Include="源.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BiTree.h" />
+    <ClInclude Include="LQueue.h" />
+    <ClInclude Include="LStack.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="SeqStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
